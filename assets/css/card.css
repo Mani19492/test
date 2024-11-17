@@ -1,63 +1,51 @@
-.section-title-header {
-    margin-bottom: 40px;
-}
 
-.section-title {
-    font-size: 2.5rem;
-    margin: 0;
-}
 
-.section-title p {
-    font-size: 1.2rem;
-}
-
-/* Card Styles */
 #card {
-    width: 90%; /* Responsive width */
-    max-width: 350px; /* Max width for card */
-    height: 515px; /* Fixed height */
+    width: 350px;
+    height: 515px;
     perspective: 1000px; /* Enables 3D effect */
-    margin: 20px auto; /* Center card with margin */
+    
 }
 
-.card-inner {
+#card .card-inner {
     width: 100%;
     height: 100%;
     position: relative;
     transition: transform 1s;
     transform-style: preserve-3d;
+    
 }
 
 #card:hover .card-inner {
     transform: rotateY(180deg); /* Rotate card on hover */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: black 2PX 2px 5px;
 }
 
-.front, .back {
+#card .front,
+#card .back {
     width: 100%;
     height: 100%;
-    border-radius: 15px; /* Rounded corners */
+    border-radius: 15px;
     position: absolute;
     backface-visibility: hidden; /* Hide the back face when not rotated */
 }
 
-/* Front Side Styles */
-.front {
+#card .front {
+    
     background-size: cover;
     padding: 60px 40px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    text-align: center; /* Centered text */
+    
 }
 
-.front h2 {
-    font-weight: 600; /* Adjusted weight */
-    font-size: 1.5rem; /* Font size */
+#card .front h2 {
+    font-weight: 25px;
     text-shadow: 2px 2px 5px black; 
 }
 
-.front button {
+#card .front button {
     width: 120px;
     border: 1px solid #fff;
     background: transparent;
@@ -71,74 +59,47 @@
     transition: all 0.3s;
 }
 
-.front button:hover {
+#card .front button:hover {
     background: white;
     color: black;
 }
 
-/* Back Side Styles */
-.back {
-    background: #fff; /* White background for back */
+#card .back {
+    background: #fff;
     color: #333;
     padding: 20px 40px;
     transform: rotateY(180deg); /* Start rotated for the flip effect */
-    text-align: left; /* Align text to the left */
 }
 
-.back h1 {
-    font-size: 1.8rem; /* Font size */
+#card .back h1 {
+    font-size: 30px;
     line-height: 35px;
     margin-bottom: 10px;
 }
 
-.back p {
-    font-size: 14px; /* Smaller text for details */
+#card .back p {
+    font-size: 14px;
 }
 
-/* Social Icons Styles */
-.row {
+#card .row {
     display: flex;
     justify-content: space-around;
     margin-top: 30px;
 }
 
-.col {
-    font-size: 30px; /* Icon size */
-    color: #7800ad; /* Icon color */
+#card .col {
+    font-size: 30px; /* Adjust size */
+    color: #7800ad;
     transition: all 0.3s;
 }
 
-.col i {
+#card .col i {
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Shadow effect */
     padding: 10px;
     border-radius: 50%;
 }
 
-.col:hover i {
-    transform: scale(1.2); /* Scale effect on hover */
+#card .col:hover i {
+    transform: scale(1.2);
     box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.7);
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    .section-title {
-        font-size: 2rem; /* Smaller title on mobile */
-    }
-    
-    #card {
-        height: auto; /* Allow height to adjust */
-        max-width: 90%; /* Adjust card width on smaller screens */
-    }
-
-    .front h2 {
-        font-size: 1.2rem; /* Adjust font size on smaller screens */
-    }
-    
-    .back h1 {
-        font-size: 1.5rem; /* Smaller size for back title */
-    }
-    
-    .back p {
-        font-size: 12px; /* Smaller text for details */
-    }
 }
